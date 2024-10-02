@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_api/todoModel.dart';
-import 'package:bloc_api/todos_api.dart';
+import 'package:bloc_api/bloc%20api/todoModel.dart';
+import 'package:bloc_api/bloc%20api/todos_api.dart';
+
 import 'package:equatable/equatable.dart';
 part 'todos_event.dart';
 part 'todos_state.dart';
