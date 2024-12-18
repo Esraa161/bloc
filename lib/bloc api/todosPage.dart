@@ -13,6 +13,10 @@ class _TodosPageState extends State<TodosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Todos"),
+        backgroundColor: Colors.cyan,
+      ),
       body: BlocBuilder<TodosBloc, TodosState>(
         builder: (context,state){
           if(state is LoadedState){
@@ -27,6 +31,24 @@ class _TodosPageState extends State<TodosPage> {
                 itemCount: state.todos.length,
                   itemBuilder:(context,index){
                     return Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              3.0,
+                              1.0,
+                            ),
+                            blurRadius: 5.0,
+                            spreadRadius: 0.0,
+                          ), //BoxShadow
+
+                        ],
+                      ),
                       child: Column(
                         children: [
                           Row(
@@ -45,7 +67,6 @@ class _TodosPageState extends State<TodosPage> {
                               ],
                             ),
                           ),
-                          Divider()
 
                         ],
                       ),

@@ -31,6 +31,11 @@ dependencies:
   http:
   flutter_bloc:
   connectivity_plus: ^6.0.0
+  shared_preferences:
+  bloc_concurrency: ^0.2.5
+  build_runner:
+  freezed:
+  freezed_annotation:
   equatable:
   flutter:
     sdk: flutter
