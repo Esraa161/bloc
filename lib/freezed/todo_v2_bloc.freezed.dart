@@ -19,32 +19,38 @@ mixin _$TodoV2Event {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllTodos,
+    required TResult Function(int id) getTodoDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllTodos,
+    TResult? Function(int id)? getTodoDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllTodos,
+    TResult Function(int id)? getTodoDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllTodos value) getAllTodos,
+    required TResult Function(_GetTodoDetail value) getTodoDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllTodos value)? getAllTodos,
+    TResult? Function(_GetTodoDetail value)? getTodoDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllTodos value)? getAllTodos,
+    TResult Function(_GetTodoDetail value)? getTodoDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$GetAllTodosImpl implements _GetAllTodos {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllTodos,
+    required TResult Function(int id) getTodoDetail,
   }) {
     return getAllTodos();
   }
@@ -115,6 +122,7 @@ class _$GetAllTodosImpl implements _GetAllTodos {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllTodos,
+    TResult? Function(int id)? getTodoDetail,
   }) {
     return getAllTodos?.call();
   }
@@ -123,6 +131,7 @@ class _$GetAllTodosImpl implements _GetAllTodos {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllTodos,
+    TResult Function(int id)? getTodoDetail,
     required TResult orElse(),
   }) {
     if (getAllTodos != null) {
@@ -135,6 +144,7 @@ class _$GetAllTodosImpl implements _GetAllTodos {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllTodos value) getAllTodos,
+    required TResult Function(_GetTodoDetail value) getTodoDetail,
   }) {
     return getAllTodos(this);
   }
@@ -143,6 +153,7 @@ class _$GetAllTodosImpl implements _GetAllTodos {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllTodos value)? getAllTodos,
+    TResult? Function(_GetTodoDetail value)? getTodoDetail,
   }) {
     return getAllTodos?.call(this);
   }
@@ -151,6 +162,7 @@ class _$GetAllTodosImpl implements _GetAllTodos {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllTodos value)? getAllTodos,
+    TResult Function(_GetTodoDetail value)? getTodoDetail,
     required TResult orElse(),
   }) {
     if (getAllTodos != null) {
@@ -165,26 +177,159 @@ abstract class _GetAllTodos implements TodoV2Event {
 }
 
 /// @nodoc
+abstract class _$$GetTodoDetailImplCopyWith<$Res> {
+  factory _$$GetTodoDetailImplCopyWith(
+          _$GetTodoDetailImpl value, $Res Function(_$GetTodoDetailImpl) then) =
+      __$$GetTodoDetailImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$GetTodoDetailImplCopyWithImpl<$Res>
+    extends _$TodoV2EventCopyWithImpl<$Res, _$GetTodoDetailImpl>
+    implements _$$GetTodoDetailImplCopyWith<$Res> {
+  __$$GetTodoDetailImplCopyWithImpl(
+      _$GetTodoDetailImpl _value, $Res Function(_$GetTodoDetailImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetTodoDetailImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTodoDetailImpl implements _GetTodoDetail {
+  const _$GetTodoDetailImpl(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'TodoV2Event.getTodoDetail(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTodoDetailImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTodoDetailImplCopyWith<_$GetTodoDetailImpl> get copyWith =>
+      __$$GetTodoDetailImplCopyWithImpl<_$GetTodoDetailImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllTodos,
+    required TResult Function(int id) getTodoDetail,
+  }) {
+    return getTodoDetail(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllTodos,
+    TResult? Function(int id)? getTodoDetail,
+  }) {
+    return getTodoDetail?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllTodos,
+    TResult Function(int id)? getTodoDetail,
+    required TResult orElse(),
+  }) {
+    if (getTodoDetail != null) {
+      return getTodoDetail(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAllTodos value) getAllTodos,
+    required TResult Function(_GetTodoDetail value) getTodoDetail,
+  }) {
+    return getTodoDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAllTodos value)? getAllTodos,
+    TResult? Function(_GetTodoDetail value)? getTodoDetail,
+  }) {
+    return getTodoDetail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAllTodos value)? getAllTodos,
+    TResult Function(_GetTodoDetail value)? getTodoDetail,
+    required TResult orElse(),
+  }) {
+    if (getTodoDetail != null) {
+      return getTodoDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetTodoDetail implements TodoV2Event {
+  const factory _GetTodoDetail(final int id) = _$GetTodoDetailImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$GetTodoDetailImplCopyWith<_$GetTodoDetailImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$TodoV2State {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Todo> todos) loaded,
-    required TResult Function(String message) errpr,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Todo> todos)? loaded,
-    TResult? Function(String message)? errpr,
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Todo> todos)? loaded,
-    TResult Function(String message)? errpr,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -192,21 +337,21 @@ mixin _$TodoV2State {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) errpr,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? errpr,
+    TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? errpr,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -270,7 +415,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Todo> todos) loaded,
-    required TResult Function(String message) errpr,
+    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -280,7 +425,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Todo> todos)? loaded,
-    TResult? Function(String message)? errpr,
+    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -290,7 +435,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Todo> todos)? loaded,
-    TResult Function(String message)? errpr,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -304,7 +449,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) errpr,
+    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -314,7 +459,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? errpr,
+    TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -324,7 +469,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? errpr,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -410,7 +555,7 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Todo> todos) loaded,
-    required TResult Function(String message) errpr,
+    required TResult Function(String message) error,
   }) {
     return loaded(todos);
   }
@@ -420,7 +565,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Todo> todos)? loaded,
-    TResult? Function(String message)? errpr,
+    TResult? Function(String message)? error,
   }) {
     return loaded?.call(todos);
   }
@@ -430,7 +575,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Todo> todos)? loaded,
-    TResult Function(String message)? errpr,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -444,7 +589,7 @@ class _$LoadedImpl implements _Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) errpr,
+    required TResult Function(_Error value) error,
   }) {
     return loaded(this);
   }
@@ -454,7 +599,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? errpr,
+    TResult? Function(_Error value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -464,7 +609,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? errpr,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -524,7 +669,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'TodoV2State.errpr(message: $message)';
+    return 'TodoV2State.error(message: $message)';
   }
 
   @override
@@ -549,9 +694,9 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Todo> todos) loaded,
-    required TResult Function(String message) errpr,
+    required TResult Function(String message) error,
   }) {
-    return errpr(message);
+    return error(message);
   }
 
   @override
@@ -559,9 +704,9 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<Todo> todos)? loaded,
-    TResult? Function(String message)? errpr,
+    TResult? Function(String message)? error,
   }) {
-    return errpr?.call(message);
+    return error?.call(message);
   }
 
   @override
@@ -569,11 +714,11 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Todo> todos)? loaded,
-    TResult Function(String message)? errpr,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (errpr != null) {
-      return errpr(message);
+    if (error != null) {
+      return error(message);
     }
     return orElse();
   }
@@ -583,9 +728,9 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) errpr,
+    required TResult Function(_Error value) error,
   }) {
-    return errpr(this);
+    return error(this);
   }
 
   @override
@@ -593,9 +738,9 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? errpr,
+    TResult? Function(_Error value)? error,
   }) {
-    return errpr?.call(this);
+    return error?.call(this);
   }
 
   @override
@@ -603,11 +748,11 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? errpr,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (errpr != null) {
-      return errpr(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }

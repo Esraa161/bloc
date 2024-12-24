@@ -4,5 +4,5 @@ part of 'todo_v2_bloc.dart';
 class TodoV2State with _$TodoV2State {
   const factory TodoV2State.loading() = _Loading;
   const factory TodoV2State.loaded(List<Todo>todos)=_Loaded;
-  const factory TodoV2State.errpr(String message)= _Error;
+  const factory TodoV2State.error(String message)= _Error;
 }

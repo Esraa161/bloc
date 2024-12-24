@@ -4,6 +4,8 @@ import 'package:bloc_api/counter/counter_bloc.dart';
 import 'package:bloc_api/counter/counter_screen.dart';
 import 'package:bloc_api/dynamic%20theme/home_screen.dart';
 import 'package:bloc_api/dynamic%20theme/theme_bloc.dart';
+import 'package:bloc_api/freezed/todo_v2_bloc.dart';
+import 'package:bloc_api/freezed/todos_screen.dart';
 import 'package:bloc_api/internet%20connection/internetConnectionScreen.dart';
 import 'package:bloc_api/internet%20connection/internet_bloc.dart';
 import 'package:bloc_api/pagination/posts_bloc.dart';
@@ -39,6 +41,10 @@ class MyApp extends StatelessWidget {
             create: (context) => ThemeBloc()..add(GetCurrentThemeEvent())),
         BlocProvider(
             create: (context) => PostsBloc()..add(GetPostsEvent())),
+        BlocProvider(
+            create: (context) =>
+            TodoV2Bloc(todosApi: TodosApi())
+              ..add(TodoV2Event.getAllTodos())),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
@@ -47,7 +53,7 @@ class MyApp extends StatelessWidget {
               theme: state.themeData,
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
-              home: PostsPage(),
+              home: TodosScreen(),
             );
           }else{
             return CircularProgressIndicator();
